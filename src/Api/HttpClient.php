@@ -2,10 +2,10 @@
 
 namespace Madewithlove\FacebookMessengerPlatform\Api;
 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as GuzzleClient;
 use Madewithlove\FacebookMessengerPlatform\Api\Contracts\HttpClient as HttpClientInterface;
 
-class HttpClient extends Client implements HttpClientInterface
+class HttpClient extends GuzzleClient implements HttpClientInterface
 {
     /**
      * @var string

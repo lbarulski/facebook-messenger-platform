@@ -2,6 +2,8 @@
 
 namespace Madewithlove\FacebookMessengerPlatform\Api;
 
+use Madewithlove\FacebookMessengerPlatform\Api\Contracts\HttpClient as HttpClientInterface;
+
 use Madewithlove\FacebookMessengerPlatform\Api\Requests\Send;
 use InvalidArgumentException;
 use BadMethodCallException;
@@ -22,9 +24,9 @@ class Client
     protected $version = 'v2.6';
 
     /**
-     * @param HttpClient $client
+     * @param HttpClientInterface $client
      */
-    public function __construct(HttpClient $client)
+    public function __construct(HttpClientInterface $client)
     {
         $this->client = $client;
     }
@@ -63,7 +65,7 @@ class Client
     }
 
     /**
-     * @return HttpClient
+     * @return HttpClientInterface
      */
     public function getHttpClient()
     {
